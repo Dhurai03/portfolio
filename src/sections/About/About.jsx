@@ -1,165 +1,81 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './About.css';
 
-gsap.registerPlugin(ScrollTrigger);
-
-/* ── SVG icon components ── */
-const IconCurious = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
-    <line x1="12" y1="17" x2="12.01" y2="17"/>
-  </svg>
-);
-
-const IconBuilt = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-    <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
-  </svg>
-);
-
-const IconReady = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="22" y1="2" x2="11" y2="13"/>
-    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-  </svg>
-);
-
-const milestones = [
+const pillars = [
   {
     number: '01',
-    title: 'Curious by Default',
-    desc: 'Started with a simple question — "how does this work?" That question turned into real code, real projects, and a discipline of learning that never stopped.',
-    Icon: IconCurious,
-    color: '#00D4FF',
+    title: 'Applied AI & Machine Learning',
+    desc: 'Designing end-to-end ML workflows — from data processing and XGBoost predictive forecasting (HydroIndex) to NLP grievance classification and generative AI grammar correction using Google Gemini (VoxFix).',
+    tag: 'Intelligence & NLP',
   },
   {
     number: '02',
-    title: 'Shipped, Not Just Built',
-    desc: 'From an AI grammar correction platform to a groundwater intelligence system — every project was designed to solve a real problem, deployed, and presented to users.',
-    Icon: IconBuilt,
-    color: '#7C3AED',
+    title: 'Full-Stack Software Engineering',
+    desc: 'Building responsive, scalable web applications with React.js, modern CSS, and high-throughput backend APIs utilizing Node.js, Express, FastAPI, and Flask. Experienced in role-based auth and state management.',
+    tag: 'Architecture & APIs',
   },
   {
     number: '03',
-    title: 'Ready for What Comes Next',
-    desc: 'Currently working across AI engineering, scalable backends, and cloud systems. Actively seeking a team where I can contribute from day one and grow fast.',
-    Icon: IconReady,
-    color: '#00D4FF',
+    title: 'Business Systems & Engineering Rigor',
+    desc: 'Pursuing B.Tech in Computer Science and Business Systems at Bannari Amman Institute of Technology. Focused on building software that solves concrete business bottlenecks with clean code and reliable deployment.',
+    tag: 'CS & Business Value',
   },
 ];
 
-const stats = [
-  { value: '3+',   label: 'Projects Deployed'          },
-  { value: '10+',  label: 'Technologies Mastered'       },
-  { value: '100%', label: 'Commitment to Impact'        },
+const highlights = [
+  { val: '4+',   label: 'Deployed Applications' },
+  { val: '12+',  label: 'Technologies & Tools' },
+  { val: '2027', label: 'B.Tech CSBS Graduation' },
+  { val: '100%', label: 'Commitment to Quality' },
 ];
 
 export default function About() {
-  const sectionRef = useRef(null);
-  const titleRef   = useRef(null);
-  const cardsRef   = useRef([]);
-  const statsRef   = useRef([]);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      /* Title teleport-in */
-      gsap.fromTo(titleRef.current,
-        { opacity: 0, y: 50, filter: 'blur(8px)' },
-        {
-          opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.9, ease: 'power3.out',
-          scrollTrigger: { trigger: titleRef.current, start: 'top 80%' },
-        }
-      );
-
-      /* Cards materialize with stagger */
-      cardsRef.current.forEach((card, i) => {
-        gsap.fromTo(card,
-          { opacity: 0, x: i % 2 === 0 ? -60 : 60, filter: 'blur(6px)' },
-          {
-            opacity: 1, x: 0, filter: 'blur(0px)',
-            duration: 0.8, ease: 'power3.out',
-            delay: i * 0.12,
-            scrollTrigger: { trigger: card, start: 'top 85%' },
-          }
-        );
-      });
-
-      /* Stats count-up effect */
-      statsRef.current.forEach((stat, i) => {
-        gsap.fromTo(stat,
-          { opacity: 0, y: 30, scale: 0.8 },
-          {
-            opacity: 1, y: 0, scale: 1,
-            duration: 0.6, delay: i * 0.1, ease: 'back.out(1.7)',
-            scrollTrigger: { trigger: stat, start: 'top 85%' },
-          }
-        );
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section id="about" ref={sectionRef} className="about-section section-full">
-      <div className="about-bg-glow" />
+    <section id="about" className="about-section section-full">
       <div className="section">
-        {/* Header */}
-        <div ref={titleRef} className="about-header">
+
+        {/* Section Header */}
+        <div className="section-header">
           <span className="section-label">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
             </svg>
-            My Story
+            About Me
           </span>
           <h2 className="section-title">
-            The <span className="text-gradient">Journey</span>
+            Engineering with <span className="text-gradient">Purpose &amp; Precision</span>
           </h2>
           <p className="section-sub">
-            I started with curiosity. That curiosity evolved into building applications,
-            solving problems, and exploring how technology creates meaningful impact.
+            I build software systems that turn raw data and complex logic into intuitive,
+            reliable products. Here is what defines my approach to technology.
           </p>
         </div>
 
-        {/* Milestone cards */}
-        <div className="about-milestones">
-          {milestones.map((m, i) => (
-            <div
-              key={m.number}
-              ref={el => (cardsRef.current[i] = el)}
-              className="milestone-card glass glow-card"
-            >
-              {/* Top accent line */}
-              <div className="milestone-accent" style={{ background: `linear-gradient(90deg, ${m.color}, transparent)` }} />
-
-              <div className="milestone-inner">
-                <div className="milestone-number-wrap">
-                  <span className="milestone-number" style={{ color: m.color }}>{m.number}</span>
-                  <span className="milestone-icon" style={{ color: m.color }}><m.Icon /></span>
-                </div>
-                <h3 className="milestone-title">{m.title}</h3>
-                <p className="milestone-desc">{m.desc}</p>
-
-                {/* Energy dot */}
-                <div className="milestone-energy" style={{ background: m.color, boxShadow: `0 0 12px ${m.color}` }} />
+        {/* Pillar Cards */}
+        <div className="about-pillars-grid">
+          {pillars.map(p => (
+            <div key={p.number} className="pillar-card glass">
+              <div className="pillar-header">
+                <span className="pillar-num">{p.number}</span>
+                <span className="pillar-tag">{p.tag}</span>
               </div>
+              <h3 className="pillar-title">{p.title}</h3>
+              <p className="pillar-desc">{p.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* Stats */}
-        <div className="about-stats">
-          {stats.map((s, i) => (
-            <div key={s.label} ref={el => (statsRef.current[i] = el)} className="stat-item">
-              <span className="stat-value text-gradient-blue">{s.value}</span>
-              <span className="stat-label">{s.label}</span>
-            </div>
-          ))}
+        {/* Stats Row */}
+        <div className="about-stats-card glass">
+          <div className="stats-row">
+            {highlights.map(h => (
+              <div key={h.label} className="stat-box">
+                <span className="stat-number text-gradient-blue">{h.val}</span>
+                <span className="stat-label">{h.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );
