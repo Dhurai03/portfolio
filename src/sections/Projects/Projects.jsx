@@ -65,7 +65,7 @@ const projects = [
       'An NLP-driven citizen complaint management system designed to eliminate manual dispatch bottlenecks. Uses natural language processing models to classify grievance text, calculate urgency priority scores, and automatically route tickets to appropriate administrative departments.',
     stack: ['Python', 'NLP & NLTK', 'Flask', 'MongoDB', 'React.js'],
     live: null,
-    github: 'https://github.com/dhuraimurugan',
+    github: 'https://github.com/Dhurai03',
     isDeveloping: true,
     features: [
       'Multi-class NLP text classification for complaint routing',
@@ -75,7 +75,7 @@ const projects = [
     ],
   },
 ];
-
+  
 export default function Projects() {
   return (
     <section id="projects" className="projects-section section-full">
