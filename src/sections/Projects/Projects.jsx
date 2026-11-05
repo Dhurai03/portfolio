@@ -11,7 +11,7 @@ const projects = [
       'An end-to-end ML platform for environmental intelligence. Computes the Heavy Metal Pollution Index (HMPI) and uses trained XGBoost models to forecast groundwater contamination trends with high accuracy. Supports batch analysis of 1,000+ samples and interactive analytical dashboards.',
     stack: ['Python', 'XGBoost', 'FastAPI', 'React.js', 'Data Analysis'],
     live: 'https://hydro-index.vercel.app',
-    github: 'https://github.com/dhuraimurugan',
+    github: 'https://github.com/dhurai03',
     features: [
       'HMPI computation engine for heavy metal evaluation',
       'XGBoost predictive forecasting for contamination spread',
@@ -29,7 +29,7 @@ const projects = [
       'A full-stack MERN application engineered for software project managers to estimate, track, and budget engineering costs using industry standard models including Function Point Analysis (FPA), COCOMO, and Analogy estimation. Features role-based JWT auth and automated PDF reporting.',
     stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Recharts'],
     live: null,
-    github: 'https://github.com/dhuraimurugan',
+    github: 'https://github.com/dhurai03',
     features: [
       'Dual estimation models: FPA, COCOMO & Analogy-based estimation',
       'Secure role-based authentication with JSON Web Tokens (JWT)',
@@ -47,7 +47,7 @@ const projects = [
       'An intelligent speech processing web application combining browser speech recognition APIs with Google Gemini AI. Users transcribe spoken audio in real time, receive deep grammatical critique, and explore vocabulary enhancements with reasoning breakdowns.',
     stack: ['React.js', 'Flask', 'Express.js', 'Google Gemini AI', 'MongoDB'],
     live: null,
-    github: 'https://github.com/dhuraimurugan',
+    github: 'https://github.com/dhurai03',
     features: [
       'Real-time voice-to-text audio stream transcription',
       'Context-aware grammar correction powered by Google Gemini',
