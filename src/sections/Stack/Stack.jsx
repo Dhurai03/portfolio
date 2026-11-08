@@ -18,7 +18,7 @@ const skillCategories = [
         <path d="M12 8v4l3 3"/>
       </svg>
     ),
-    skills: ['NLP & NLTK', 'scikit-learn', 'XGBoost', 'TensorFlow', 'Google Gemini AI'],
+    skills: ['NLP', 'scikit-learn', 'XGBoost', 'TensorFlow', 'Google Gemini AI'],
   },
   {
     category: 'Backend & APIs',
